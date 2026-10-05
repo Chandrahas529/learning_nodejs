@@ -2,23 +2,24 @@ const express = require("express");
 
 const app = express();
 
-app.use((req,res,next)=>{
-    req.user = "Guest";
-    next();
+app.get("/orders",(req,res)=>{
+    res.send("Here is the list of all orders.");
 })
 
-app.get("/welcome",(req,res)=>{
-    res.send(`<h1>Welcome, ${req.user}!`);
+app.post("/orders",(req,res)=>{
+    res.send("A new order has been created.");
 })
 
-app.listen(3000,()=>{
-    console.log("Server is running")
+app.get("/users",(req,res)=>{
+    res.send("Here is the list of all users.");
 })
 
-// const http = require("http");
-// const routes = require("./routes");
-// let app = http.createServer(routes);
+app.post("/users",(req,res)=>{
+    res.send("A new user has been added.");
+})
 
-// app.listen(3000,()=>{
-//     console.log("Server is running...");
-// })
+const port = 3000;
+
+app.listen(port, ()=>{
+    console.log(`Server is running on http://localhost:${port}`)
+})
