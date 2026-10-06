@@ -2,6 +2,12 @@ const express = require("express");
 
 const app = express();
 
+app.get("/welcome/:username",(req,res)=>{
+    const username = req.params.username;
+    const role = req.params.role;
+    res.send(`Welcome ${username}, your role is ${role}`);
+})
+
 app.get("/products", (req,res)=>{
     res.send("Here is the list of all products.");
 })
