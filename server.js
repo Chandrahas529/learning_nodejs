@@ -2,10 +2,11 @@ const express = require("express");
 
 const app = express();
 
-app.get("/welcome/:username",(req,res)=>{
-    const username = req.params.username;
-    const role = req.params.role;
-    res.send(`Welcome ${username}, your role is ${role}`);
+app.use((req,res,next)=>{
+    let url = req.url;
+    let method = req.method;
+    console.log(`${method} request made to ${url}`);
+    next();
 })
 
 app.get("/products", (req,res)=>{
