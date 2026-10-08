@@ -4,9 +4,12 @@ const productRouter = require("./routes/productRoutes")
 const cartRouter = require("./routes/cartRoutes")
 const app = express();
 
-app.use("/users",userRouter);
+app.use(express.static("public"));
+app.use(express.json());
+
+app.use("/api/users",userRouter);
 app.use("/api/products",productRouter);
-app.use("/cart",cartRouter);
+app.use("/api/cart",cartRouter);
 
 app.listen(3030,()=>{
     console.log("Server is running...");

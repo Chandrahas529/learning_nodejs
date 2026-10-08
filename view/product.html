@@ -6,10 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form onsubmit="onSumbitHandler(event)">
         <label for="product">Product Name</label>
         <input type="text" name="productName" id="product">
         <button type="submit">Add Product</button>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.js" integrity="sha512-6/5zO9B3GKTKl45L4FHRPB/d5PamwD37Gnz+GGa18atcadWWcC+UQjbXKNVkMN+IY6tPrJvN/h3Wn5dZgXEYKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/product.js"></script>
 </body>
 </html>
