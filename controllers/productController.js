@@ -1,12 +1,12 @@
 const productServices = require("../services/productServices")
+const path = require("path");
 const getAllProducts = (req,res) => {
-    let result = productServices.getAllProducts();
-    res.send(result);
+    res.sendFile(path.join(__dirname,"..","view","product.html"));
 }
 
 const addProduct = (req,res) => {
     let result = productServices.createProduct(req);
-    res.send(result);
+    res.send(result); 
 }
 
 const getProductById = (req,res) => {
